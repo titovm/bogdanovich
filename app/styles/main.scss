@@ -1,6 +1,8 @@
 // bower:scss
 // endbower
 
+@import "bower_components/bootstrap/scss/bootstrap.scss";
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -9,7 +11,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&subset=cyrillic');
-@mixin heading-font($font-size:3rem) {
+@mixin heading-font($font-size:4rem) {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -21,59 +23,115 @@ $red: #ee4036;
 $grey-dark: #383838;
 $grey-light: #58595b;
 
-.row {
-  height: 800px;
+.container-fluid {
+  position: relative;
   // border-bottom: 1px solid $grey-dark;
   box-shadow: 0px 15px 60px 5px rgba(0,0,0,.2);
-  .col {
-    position: relative;
-    p {
-      color: $grey-dark;
+  .row {
+    min-height: 550px;
+    padding: 5%;
+    .col {
+      p {
+        color: $grey-dark;
+      }
     }
-  }
-  .col-4, .col-6 {
-    padding: 0 5%;
+    .col-4, .col-6 {
+      padding: 0 5%;
+    }
   }
 }
 
-
-.lead-background {
+.slide-background {
   width: 100%;
-  height: 77%;
+  height: 70%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  background-image: url("http://static.tumblr.com/6e347cd8cecd9fbc88a3841ca5a81fdd/kk6pivj/EQingoh0r/tumblr_static_9rmznmt8lvk0gs080kgoggcow.jpg");
+  background-image: url("/images/bg_1.jpg");
+  background-position: center;
   background-size: cover;
+  box-shadow: 0px -140px 70px -17px rgba(0, 0, 0, 0.6) inset;
+}
+
+@include media-breakpoint-up(sm) {
+  .container-fluid {
+    .row {
+      min-height: 750px;
+    }
+    .slide-background {
+      height: 70%;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .container-fluid {
+    .row {
+      min-height: 800px;
+    }
+    .slide-background {
+      height: 73%;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .container-fluid {
+    .row {
+      min-height: 900px;
+    }
+    .slide-background {
+      height: 76%;
+    }
+  }
 }
 
 .content {
   position: absolute;
-  left: 0;
+  left: 15px;
   width: 90%;
-  margin: 5%;
   border-left: 8px solid $red;
   padding-left: 3%;
   z-index: 5;
   h2 {
-    @include heading-font();
+    @include heading-font(1.7rem);
+    @include media-breakpoint-up(sm) {
+      font-size: 2.2rem;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
   }
 }
 
-.lead {
+.slide {
   .content {
     bottom: 0;
     h2 {
       color: #fff;
       margin-bottom: 1em;
     }
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      @include media-breakpoint-up(sm) {
+        font-size: 1.2rem;
+      }
+      @include media-breakpoint-up(md) {
+        font-size: 1.3rem;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 .info, .contacts {
   .content {
     position: static;
-    margin: 5% 5% 2% 5%;
+    margin-bottom: 2%;
     h2 {
       color: $grey-dark;
       margin-bottom: 0;
@@ -84,54 +142,121 @@ $grey-light: #58595b;
     }
   }
 }
-.body {
-  margin: 0 5% 5% 5%;
+
+// Intro Page
+.intro-page {
+  background-image: url("/images/bg_1.jpg");
+  background-position: center;
+  background-size: cover;
+  h1 {
+    text-align: center;
+    color: #fff;
+    @include heading-font(3rem);
+    @include media-breakpoint-up(sm) {
+      font-size: 2.2rem;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 5rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 6rem;
+    }
+  }
 }
 
+// Age page
+.age-page {
+  .slide-background {
+    background-image: url("/images/bg_2.jpg");
+  }
+}
 
-// Numbers
-.number {
-  @include heading-font();
-  color: $red;
-  line-height: 1.1;
+// Time page
+.time-page {
+  .slide-background {
+    background-image: url("/images/bg_3.jpg");
+  }
 }
-.description {
-  color: $grey-light;
-  line-height: 1.1;
+
+// Brands page
+.brands-page {
+  .slide-background {
+    background-image: url("/images/bg_4.jpg");
+    background-position: center bottom;
+  }
 }
-.big-number {
+
+// Numbers page
+.numbers-page {
+  background-image: url("/images/numbers-bg.svg");
+  background-size: cover;
+  background-position: bottom center;
   .number {
-    font-size: 10rem;
+    @include heading-font();
+    color: $red;
+    line-height: 1.1;
   }
   .description {
-    font-size: 2.4rem;
+    color: $grey-light;
+    line-height: 1.1;
   }
-}
-.numbers {
-  .number {
-    font-size: 3rem;
-    padding-top: 1.8rem;
+  .big-number {
+    .number {
+      font-size: 10rem;
+    }
+    .description {
+      font-size: 2.4rem;
+    }
   }
-  .description {
-    font-size: 1.3rem;
+  .numbers {
+    .number {
+      font-size: 3rem;
+      padding-top: 1.8rem;
+    }
+    .description {
+      font-size: 1.3rem;
+    }
   }
 }
 
-// Options
+// Venues page
+.venues-page {
+  .slide-background {
+    background-image: url("/images/bg_5.jpg");
+  }
+}
+
+// Artists page
+.artists-page {
+  .slide-background {
+    background-image: url("/images/bg_6.jpg");
+  }
+}
+
+// Options page
 .option {
+  img {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 140px;
+    height: 140px;
+    @include media-breakpoint-up(md) {
+      width: 180px;
+      height: 180px;
+    }
+  }
   h3 {
     @include heading-font();
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: $red;
     text-align: center;
   }
 }
 
-// Contacts
-.contacts {
+// Contacts page
+.contacts-page {
   h3 {
-    @include heading-font();
-    font-size: 2rem;
+    @include heading-font(2.5rem);
   }
   p {
     font-size: 1.3rem;
@@ -143,43 +268,22 @@ $grey-light: #58595b;
       color: $grey-dark;
       &:hover {
         color: $grey-light;
+        text-decoration: none;
       }
     }
   }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .content {
-    h2 {
-      @include heading-font(1.2rem);
+  .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 7px solid $red;
+    margin-bottom: 2rem;
+    background-size: cover;
+    &.bogdanovich {
+      background-image: url("/images/mbogdanovich.jpg");
     }
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .content {
-    h2 {
-      @include heading-font(2.7rem);
-    }
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .content {
-    h2 {
-      @include heading-font(3rem);
-    }
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .lead-content {
-    h2 {
-      @include heading-font(3rem);
+    &.atsoy {
+      background-image: url("/images/atsoy.jpg");
     }
   }
 }
