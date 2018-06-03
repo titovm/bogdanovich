@@ -4,3 +4,5 @@
 //         $('.page').css({'height':($(document).height())+'px'});
 //     });
 // });
+
+AOS.init();
