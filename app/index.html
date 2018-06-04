@@ -81,13 +81,13 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-5 big-number">
-        <div class="number">500+</div>
+        <div class="number"><span id="count-500">500</span>+</div>
         <div class="description">СОБЫТИЙ</div>
       </div>
       <div class="col-md-6 col-lg-5 numbers">
-        <div class="number">1500-90 000</div>
+        <div class="number"><span id="count-1500">1500</span>-<span id="count-90000">90 000</span></div>
         <div class="description">ПОСЕТИТЕЛЕЙ НА МЕРОПРИЯТИЯX</div>
-        <div class="number">3 000 000</div>
+        <div class="number"><span id="count-3m">3 000 000</span></div>
         <div class="description">ОБЩЕЕ ЧИСЛО ПОСЕТИТЕЛЕЙ</div>
       </div>
     </div>
@@ -174,7 +174,7 @@
           <h2 data-aos="fade-up">КОНТАКТЫ</h2>
         </div>
       </div>
-      <div class="col-md-5 col-lg-4">
+      <div class="col-md-5 col-lg-4" data-aos="fade-right">
         <div class="avatar atsoy"></div>
         <h3>АЛЕКСАНДРА ЦОЙ</h3>
         <p>
@@ -182,7 +182,7 @@
           <i class="fas fa-phone-volume"></i> <a href="tel:+79210901644" class="tel">+7 921 090 16 44</a>
         </p>
       </div>
-      <div class="col-md-5 col-lg-4">
+      <div class="col-md-5 col-lg-4"  data-aos="fade-left">
         <div class="avatar bogdanovich"></div>
         <h3>МИХАИЛ БОГДАНОВИЧ</h3>
         <p>
@@ -218,6 +218,8 @@
   <script src="/bower_components/popper.js/dist/umd/popper.js"></script>
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/aos/dist/aos.js"></script>
+  <script src="/bower_components/countUp.js/dist/countUp.min.js"></script>
+  <script src="/bower_components/waypoints/lib/noframework.waypoints.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

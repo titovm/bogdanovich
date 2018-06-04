@@ -322,6 +322,10 @@ $grey-light: #58595b;
     border: 7px solid $red;
     margin-bottom: 2rem;
     background-size: cover;
+    @include media-breakpoint-up(lg) {
+      width: 250px;
+      height: 250px;
+    }
     &.bogdanovich {
       background-image: url("/images/mbogdanovich.jpg");
     }
