@@ -1,9 +1,9 @@
-// $(function(){
-//     $('.page').css({'height':($(document).height())+'px'});
-//     $(window).resize(function(){
-//         $('.page').css({'height':($(document).height())+'px'});
-//     });
-// });
+$(function(){
+    $('.page').css({'height':($(window).height())+'px'});
+    $(window).resize(function(){
+        $('.page').css({'height':($(window).height())+'px'});
+    });
+});
 
 AOS.init();
 

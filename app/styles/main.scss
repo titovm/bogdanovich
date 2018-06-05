@@ -251,11 +251,12 @@ $grey-light: #58595b;
   }
   .venue-list {
     margin-right: -15%;
+    margin-bottom: 100px;
     .venue {
       display: inline-block;
-      height: 250px;
+      height: 350px;
       width: 18%;
-      margin: 0 10px;
+      margin: 0 5px;
       background-position: center;
       background-size: cover;
       @for $i from 1 through 5 {
